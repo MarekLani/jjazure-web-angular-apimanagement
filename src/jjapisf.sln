@@ -7,10 +7,6 @@ Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "jjapisf", "jjapisf\jjapisf.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jjapisfbooks", "jjapisfbooks\jjapisfbooks.csproj", "{50CCCF26-1D86-4763-AE4E-E690C1266AF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortSharingAPI1", "PortSharingAPI1\PortSharingAPI1.csproj", "{509BF769-536D-4F47-B1CF-226EEFAA89AA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortSharingAPI2", "PortSharingAPI2\PortSharingAPI2.csproj", "{02E37CF5-2B11-4130-909B-C3F979D54B49}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,22 +31,6 @@ Global
 		{50CCCF26-1D86-4763-AE4E-E690C1266AF0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{50CCCF26-1D86-4763-AE4E-E690C1266AF0}.Release|x64.ActiveCfg = Release|Any CPU
 		{50CCCF26-1D86-4763-AE4E-E690C1266AF0}.Release|x64.Build.0 = Release|Any CPU
-		{509BF769-536D-4F47-B1CF-226EEFAA89AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{509BF769-536D-4F47-B1CF-226EEFAA89AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{509BF769-536D-4F47-B1CF-226EEFAA89AA}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{509BF769-536D-4F47-B1CF-226EEFAA89AA}.Debug|x64.Build.0 = Debug|Any CPU
-		{509BF769-536D-4F47-B1CF-226EEFAA89AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{509BF769-536D-4F47-B1CF-226EEFAA89AA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{509BF769-536D-4F47-B1CF-226EEFAA89AA}.Release|x64.ActiveCfg = Release|Any CPU
-		{509BF769-536D-4F47-B1CF-226EEFAA89AA}.Release|x64.Build.0 = Release|Any CPU
-		{02E37CF5-2B11-4130-909B-C3F979D54B49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02E37CF5-2B11-4130-909B-C3F979D54B49}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02E37CF5-2B11-4130-909B-C3F979D54B49}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{02E37CF5-2B11-4130-909B-C3F979D54B49}.Debug|x64.Build.0 = Debug|Any CPU
-		{02E37CF5-2B11-4130-909B-C3F979D54B49}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02E37CF5-2B11-4130-909B-C3F979D54B49}.Release|Any CPU.Build.0 = Release|Any CPU
-		{02E37CF5-2B11-4130-909B-C3F979D54B49}.Release|x64.ActiveCfg = Release|Any CPU
-		{02E37CF5-2B11-4130-909B-C3F979D54B49}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

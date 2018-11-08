@@ -33,8 +33,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\jjapisfbooks\jjapisfbooks.csproj" />
-    <ProjectReference Include="..\PortSharingAPI1\PortSharingAPI1.csproj" />
-    <ProjectReference Include="..\PortSharingAPI2\PortSharingAPI2.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <PropertyGroup>

@@ -36,7 +36,6 @@ namespace jjapisforders
                 this.cosmosDBclient.CreateDatabaseIfNotExistsAsync(new Database { Id = dbName });
                 this.cosmosDBclient.CreateDocumentCollectionIfNotExistsAsync(UriFactory.CreateDatabaseUri(dbName), new DocumentCollection { Id = collectionName });
             }
-         
         }
 
         public IConfiguration Configuration { get; }

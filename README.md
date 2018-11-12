@@ -2,15 +2,10 @@
 
 SinglePage Angular web application calling back-end rest API published with API management. Backend API is secured using bearer tokens from Azure Active Directory .
 
-**TODO**:
-
-- Multiple API services (now only Books) - check https://github.com/jjindrich/jjazure-web-angular-apimanagement/pull/1
-- Host API in Docker using Azure Mesh
-
 **Design for development**:
 
 - all API services will be published with public IP
-- API services publish with Azure API Management
+- API services published with Azure API Management with public IP
 
 **Design for production**:
 
@@ -23,6 +18,10 @@ SinglePage Angular web application calling back-end rest API published with API 
 - [Combine with Azure Application Gateway](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-integrate-internal-vnet-appgateway)
 
 *If you will not use API management, you have to implement security checks on your API services directly.*
+
+**TODO: Next steps**:
+
+- Host API in Docker using Azure Mesh
 
 ## Create frontend web
 
@@ -347,6 +346,38 @@ You can test it from Developer Console - Authorization value is generated after 
 
 ![API management Books Secure API](media/api-bookssecure-design.png)
 
+### Add policy Set Query parameter from JWT token
+
+We don't want parse and validate JWT token on backend API service. From that reason we will parse JWT on API management and send to API backend.
+
+Add following policy to Books Get method with parameter Id. 
+
+```xml
+        <set-query-parameter name="upn" exists-action="override">
+            <value>@{
+  string retValue = "NOAUTH";
+  string authHeader = context.Request.Headers.GetValueOrDefault("Authorization", "");
+  if (authHeader?.Length > 0)
+  {
+    string[] authHeaderParts = authHeader.Split(' ');
+    if (authHeaderParts?.Length == 2 && authHeaderParts[0].Equals("Bearer", StringComparison.InvariantCultureIgnoreCase))
+    {
+      Jwt jwt;
+      if (authHeaderParts[1].TryParseJwt(out jwt))
+      {
+        retValue = jwt.Claims.GetValueOrDefault("email", "NOEMAIL");
+      }
+    }
+    return retValue;
+  }
+  return retValue;}</value>
+        </set-query-parameter>
+```
+
+Open jjweb website, login with your account and click Book test call.
+
+![jjweb test api call](media/jjweb-test-call.png)
+
 ### Create Mock response service
 
 You can start with creating API service as mock and implement service later.
@@ -374,6 +405,8 @@ Sample for JSON response
 ### API guides
 
 [Debug API](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-api-inspector)
+
+Warning: Trace is not working if Header is missing **Ocp-Apim-Subscription-Key**. Get key from Developer portal from your account.
 
 [Version API](https://docs.microsoft.com/en-us/azure/api-management/api-management-get-started-publish-versions)
 

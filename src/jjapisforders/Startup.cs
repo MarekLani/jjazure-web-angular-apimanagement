@@ -18,6 +18,7 @@ namespace jjapisforders
 {
     public class Startup
     {
+
         private CosmosDbClientFactory cosmosDBClientFactory;
 
         public Startup(IConfiguration configuration)

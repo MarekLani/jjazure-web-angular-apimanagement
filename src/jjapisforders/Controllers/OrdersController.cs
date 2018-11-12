@@ -73,6 +73,7 @@ namespace jjapisforders.Controllers
                     //Creating Document - you can obtain id from result
                     await _clientFactory.GetDocumentClient().CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(_configuration.GetSection("ConnectionStrings").GetValue<string>("CosmosDBName"), _configuration.GetSection("ConnectionStrings").GetValue<string>("CosmosCollectionName")), document);
 
+
                 return content;
             }
             catch (Exception ex)
